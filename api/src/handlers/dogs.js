@@ -2,7 +2,7 @@ const Router = require("express");
 const { getAllDogs } = require("../controllers/getAllDogs");
 const postDogs = require("../controllers/postDogs");
 const getDogById = require("../controllers/getDogById");
-const allDogsByName = require("../controllers/getDogByname");
+const allDogsByName = require("../controllers/getDogByName");
 const deleteDog = require("../controllers/deleteDog");
 
 const dogs = Router();
