@@ -1,0 +1,15 @@
+.temperamentContainer{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.temperamentContainer span{
+    color: white;
+    margin: 5px;
+    background-color: rgba(205, 40, 122, 0.7);
+    border: 1px solid black;
+    border-radius: 10px 0px;
+    padding: 5px;
+}

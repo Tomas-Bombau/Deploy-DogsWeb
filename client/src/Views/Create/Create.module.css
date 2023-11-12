@@ -1,0 +1,205 @@
+.background{
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer{
+    width: 500px;
+    height: 650px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px 25px rgba(0, 0, 0, 0.2);
+    background-image: url('../../assets/form-image.jpg');
+    background-repeat: no-repeat;
+    padding: 3px;
+}
+
+.formContent{
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.formContent .title{
+    text-align: center;
+}
+
+.formContent .altYPesoContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.formContent .alturaContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    text-align: center;
+}
+
+.formContent .pesoContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    text-align: center;
+}
+
+.formContent .promedioContainer{
+    text-align: center;
+}
+
+.temperamentChoice{
+    text-align: center;
+    font-weight: 600;
+}
+
+.temperamentsPosition{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:stretch;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.temperamentsCards{
+    margin: 5px auto;
+    padding: 5px 10px;
+    font-weight: 400;
+    border-radius: 5px;
+    background-color: rgba(205, 40, 122, 0.7);
+    box-shadow: 2px 2px 2px black;
+    position: relative;
+}
+
+.delete{
+    background-color: rgba(205, 40, 122, 0.1);
+    position: absolute;
+    top: 2;
+    transform: translate(-0%, -50%);
+}
+
+.delete:hover{
+    cursor: pointer;
+}
+
+.formContent input{
+    border: 1px solid black; 
+    margin-top: 5px;
+    padding: 5px 10px;
+    box-shadow: 0 0 3px black;
+    border-radius: 5px;
+}
+
+.formContent select{
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.formContent label{
+    font-weight: 600;
+}
+
+.formContent p{
+    width: 200px;
+    font-size: 14px;
+    font-weight: 0;
+    color: red;
+}
+
+.formContent .temperamentsPositionError p{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.formContent button{
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.formContent button:hover{
+    cursor: pointer;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.success{
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(4, 4, 4, 0.9);
+    text-align: center;
+    gap: 15px;
+    z-index: 3;
+}
+
+.botonInicio{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px 20px;
+    background-color: black;
+    box-shadow: 0px 2px 20px white;
+}
+
+.success .botonInicio a{
+    display: flex;
+    color: white;
+    font-size: 30px;
+    text-decoration:none;
+    text-align: center;
+}
+
+.success .botonInicio:hover{
+    box-shadow: 0px 2px 20px rgba(205,40,122,1);
+} 
+
+.success .botonInicio a:hover{
+    cursor: pointer;
+    color: rgba(205,40,122,1);
+}
+
+
+@media (max-width:400px) {
+    .formContainer{
+        width: 300px;
+        height: 750px;
+    }
+
+    .formContent .alturaContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .formContent .pesoContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}

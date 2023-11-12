@@ -1,0 +1,54 @@
+.paginationContainer{
+  background-color: white;
+}
+
+.paginationContainer ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 5px;    
+}
+
+.paginationContainer  ul li{
+    font-size: large;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    width: 20px;
+    background-color: rgba(205, 40, 122, 0.7);
+    transform: scale(1);
+    border: 1px solid black;
+}
+
+
+.paginationContainer ul a:link {
+    text-decoration: none;
+  }
+
+  .paginationContainer ul a {
+    text-decoration: none;
+    color: white;
+  }
+
+.paginationContainer  li:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.paginationContainer  a:hover{
+    cursor: pointer;
+}
+
+.paginationContainer ul a span{
+    font-size: 30px;
+    color: black;
+  }
+
+
+  .volverAHome{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
