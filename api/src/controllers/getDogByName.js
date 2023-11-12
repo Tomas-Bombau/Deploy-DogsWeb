@@ -2,7 +2,6 @@ require("dotenv").config();
 const { getAllDogsApi } = require("./getAllDogs");
 const { Dog, Temperament } = require("../db");
 const { Op } = require("sequelize");
-const { API_KEY } = process.env;
 
 // Search for Dog with name in API
 const getDogByNameAPI = async (name) => {
@@ -61,7 +60,11 @@ const allDogsByName = async (name) => {
   const dogsApi = await getDogByNameAPI(name);
   const dogsDB = await getDogByNameDB(name);
   const dogsByName = [...dogsApi, ...dogsDB];
-  return dogsByName;
+  if (dogsByName.length === 0) {
+    return [];
+  } else {
+    return dogsByName;
+  }
 };
 
 module.exports = allDogsByName;
