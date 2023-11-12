@@ -18,7 +18,7 @@ axios.defaults.baseURL = "https://deploy-production-9ebb.up.railway.app/"
 export const getDogs = () => {
   return async function (dispatch) {
     try {
-      const response = await axios.get("/dogs/");
+      const response = await axios.get("https://deploy-production-9ebb.up.railway.app/dogs/");
       return dispatch({
         type: GET_DOGS,
         payload: response.data,
@@ -32,7 +32,7 @@ export const getDogs = () => {
 export const getDogById = (id) => {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`/dogs/${id}`);
+      const response = await axios.get(`https://deploy-production-9ebb.up.railway.app/dogs/${id}`);
       const data = response.data;
       return dispatch({
         type: DOG_BY_ID,
@@ -47,7 +47,7 @@ export const getDogById = (id) => {
 export const getTemperaments = () => {
   return async function (dispatch) {
     try {
-      const response = await axios.get("/temperaments");
+      const response = await axios.get("https://deploy-production-9ebb.up.railway.app/temperaments");
       const data = response.data;
       return dispatch({
         type: GET_TEMPERAMENTS,
@@ -78,7 +78,7 @@ export const searchByName = (name) => {
 
 export const postDog = (dog) => {
   return async function (dispatch) {
-    let data = await axios.post("/dogs/", dog);
+    let data = await axios.post("https://deploy-production-9ebb.up.railway.app/dogs/", dog);
     return dispatch({
       type: POST,
       payload: data,
