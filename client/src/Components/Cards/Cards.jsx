@@ -26,15 +26,15 @@ const Cards = (props) => {
   
   const [fav, setFav] = useState(false);
   const dispatch = useDispatch();
-  const favorites = useSelector((state) => state.favorites);
+  const favorites = useSelector((state) => state?.favorites);
 
   useEffect(() => {
     favorites.forEach((favorite) => {
-      if (favorite.id === props.id) {
+      if (favorite.id == props.id) {
         setFav(true);
       }
     });
-  }, [favorites, props.id]);
+  }, [favorites]);
 
   const deleteHandler = async (id) => {
     const newId = { id: id };
@@ -42,7 +42,6 @@ const Cards = (props) => {
   };
 
   const handleFavorite = () => {
-    setFav(!fav);
     return fav ? dispatch(removeFav(id)) : dispatch(addFav(id));
   };
 
