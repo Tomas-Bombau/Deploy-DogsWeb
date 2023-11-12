@@ -13,11 +13,12 @@ import {
   REMOVE_FAV,
 } from "./actionsTypes";
 import axios from "axios";
+axios.defaults.baseURL = "http://localhost:3001/"
 
 export const getDogs = () => {
   return async function (dispatch) {
     try {
-      const response = await axios.get("http://localhost:3001/dogs/");
+      const response = await axios.get("/dogs/");
       return dispatch({
         type: GET_DOGS,
         payload: response.data,
@@ -31,7 +32,7 @@ export const getDogs = () => {
 export const getDogById = (id) => {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3001/dogs/${id}`);
+      const response = await axios.get(`/dogs/${id}`);
       const data = response.data;
       return dispatch({
         type: DOG_BY_ID,
@@ -46,7 +47,7 @@ export const getDogById = (id) => {
 export const getTemperaments = () => {
   return async function (dispatch) {
     try {
-      const response = await axios.get("http://localhost:3001/temperaments");
+      const response = await axios.get("/temperaments");
       const data = response.data;
       return dispatch({
         type: GET_TEMPERAMENTS,
@@ -62,7 +63,7 @@ export const searchByName = (name) => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/dogs?name=${name}`
+        `/dogs?name=${name}`
       );
       const data = response.data;
       return dispatch({
@@ -77,7 +78,7 @@ export const searchByName = (name) => {
 
 export const postDog = (dog) => {
   return async function (dispatch) {
-    let data = await axios.post("http://localhost:3001/dogs/", dog);
+    let data = await axios.post("/dogs/", dog);
     return dispatch({
       type: POST,
       payload: data,
@@ -115,7 +116,7 @@ export const filterSource = (value) => {
 
 export const deleteDog = (newId) => {
   return async function (dispatch) {
-    await axios.delete("http://localhost:3001/dogs/delete", { data: newId });
+    await axios.delete("/dogs/delete", { data: newId });
     return dispatch({
       type: DELETE,
       payload: newId.id,

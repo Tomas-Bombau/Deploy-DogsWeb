@@ -30,11 +30,11 @@ const Cards = (props) => {
 
   useEffect(() => {
     favorites.forEach((favorite) => {
-      if (favorite.id == props.id) {
+      if (favorite.id === props.id) {
         setFav(true);
       }
     });
-  }, [favorites]);
+  }, [favorites, props.id]);
 
   const deleteHandler = async (id) => {
     const newId = { id: id };
