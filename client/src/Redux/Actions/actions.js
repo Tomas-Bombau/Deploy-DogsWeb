@@ -13,7 +13,7 @@ import {
   REMOVE_FAV,
 } from "./actionsTypes";
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:3001/"
+axios.defaults.baseURL = "https://deploy-production-9ebb.up.railway.app/"
 
 export const getDogs = () => {
   return async function (dispatch) {
