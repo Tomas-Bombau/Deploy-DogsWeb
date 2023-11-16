@@ -7,6 +7,8 @@ import Create from './Views/Create/Create';
 import NavBar from './Components/NavBar/NavBar';
 import About from './Views/About/About';
 import Favorites from './Views/Favorites/Favorites';
+import Errors from './Components/Errors/Errors';
+
 
 function App() {
   const location = useLocation()
@@ -21,6 +23,7 @@ function App() {
         <Route path='/detail/:id' Component={Detail} />
         <Route path='/favorites' Component={Favorites} />
         <Route path='/about' Component={About} />
+        <Route path="*" element={<Errors/>} />
       </Routes>
     </div>
   );
