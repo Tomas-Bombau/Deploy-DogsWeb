@@ -15,7 +15,9 @@ import {
 const initialState = {
   allDogs: [],
   allDogsCopy: [],
-  allDogsCopy2: [],
+  allDogsCopyToCombineFilters: [],
+  allDogsCopyToCombineFilters2: [],
+  allDogsCopyToCombineFilters3: [],
   allTemperaments: [],
   dogId: [],
   favorites: [],
@@ -38,7 +40,11 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, dogId: action.payload };
 
     case SEARCH:
-      return { ...state, allDogs: action.payload };
+      return {
+        ...state,
+        allDogs: action.payload,
+        allDogsCopyToCombineFilters: action.payload,
+      };
 
     case DELETE:
       const copyForSource = state.allDogsCopy;
@@ -53,12 +59,12 @@ const rootReducer = (state = initialState, action) => {
 
     case ADD_FAV:
       const copy = state.allDogs;
-      const addingDog = copy.filter((dog) => dog.id === action.payload);
+      const addingDog = copy.filter((dog) => dog.id == action.payload);
       return { ...state, favorites: [...state.favorites, ...addingDog] };
 
     case REMOVE_FAV:
       const copy2 = state.favorites;
-      const removingDog = copy2.filter((dog) => dog.id !== action.payload);
+      const removingDog = copy2.filter((dog) => dog.id != action.payload);
       return { ...state, favorites: [...removingDog] };
 
     case ORDER_NAME:
@@ -107,30 +113,60 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, allDogs: dogsByWeight };
 
     case FILTER_TEMPERAMENT:
-      const copyForTemperamentSource = state.allDogsCopy;
+      const copyForTemperament = state.allDogsCopyToCombineFilters;
       if (action.payload === "todos") {
-        return { ...state, allDogs: copyForTemperamentSource };
+        return {
+          ...state,
+          allDogs: copyForTemperament,
+          allDogsCopyToCombineFilters2: copyForTemperament,
+          allDogsCopyToCombineFilters3: copyForTemperament
+        };
       } else {
-        const filteredDog = copyForTemperamentSource.filter((dog) =>
+        const filteredDog = copyForTemperament.filter((dog) =>
           dog.temperaments.includes(action.payload)
         );
-        return { ...state, allDogs: filteredDog };
+        return {
+          ...state,
+          allDogs: filteredDog,
+          allDogsCopyToCombineFilters2: filteredDog,
+          allDogsCopyToCombineFilters3: filteredDog,
+        };
       }
 
     case FILTER_SOURCE:
-      const copyForSourceFilter = state.allDogsCopy;
-      if (action.payload === "todos") {
-        return { ...state, allDogs: copyForSourceFilter };
-      } else if (action.payload === "db") {
-        const filteredDogDB = copyForSourceFilter.filter(
-          (dog) => dog.createdInDb === true
-        );
-        return { ...state, allDogs: filteredDogDB };
-      } else {
-        const filteredDog = copyForSourceFilter.filter(
-          (dog) => !dog.createdInDb
-        );
-        return { ...state, allDogs: filteredDog };
+      const copyForSourceFilter = state.allDogsCopyToCombineFilters2;
+
+      if (state.allDogsCopyToCombineFilters2.length > 0) {
+        if (action.payload === "todos") {
+          return { ...state, allDogs: copyForSourceFilter };
+        } else if (action.payload === "db") {
+          const filteredDogDB = state.allDogsCopyToCombineFilters2.filter(
+            (dog) => dog.createdInDb === true
+          );
+          return { ...state, allDogs: filteredDogDB };
+        } else {
+          const filteredDog2 = state.allDogsCopyToCombineFilters3.filter(
+            (dog) => !dog.createdInDb
+          );
+          return { ...state, allDogs: filteredDog2 };
+        }
+      }
+
+      if (state.allDogsCopyToCombineFilters2.length == 0) {
+        const copyFilter = state.allDogsCopyToCombineFilters
+        if (action.payload === "todos") {
+          return { ...state, allDogs: copyFilter };
+        } else if (action.payload === "db") {
+          const filteredDogDB = copyFilter.filter(
+            (dog) => dog.createdInDb === true
+          );
+          return { ...state, allDogs: filteredDogDB };
+        } else {
+          const filteredDog2 = copyFilter.filter(
+            (dog) => !dog.createdInDb
+          );
+          return { ...state, allDogs: filteredDog2 };
+        }
       }
 
     default:
