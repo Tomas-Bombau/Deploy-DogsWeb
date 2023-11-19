@@ -69,6 +69,10 @@
             padding: 3px 0px;
             border-radius: 5px;
         }
+        & button:hover{
+            cursor: pointer;
+            transform: scale(1.05);
+        }
     }
 }
 
