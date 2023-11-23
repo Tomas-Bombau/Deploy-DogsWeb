@@ -1,5 +1,5 @@
 //assets
-import scotch from '../../assets/scotch.png'
+import scotch from "../../assets/scotch.png";
 //Hooks
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,13 +31,11 @@ const Detail = () => {
       });
   }, [detailId, dispatch]);
 
-  console.log(errorID.message);
-
   const dogId = useSelector((state) => state?.dogId);
 
-  const goBack = () =>{
-    navigate(-1)
-  }
+  const goBack = () => {
+    navigate(-1);
+  };
 
   if (detailId.length === 36) {
     dogId.id = "Nueva Raza";
@@ -54,9 +52,9 @@ const Detail = () => {
   return (
     <section className={css.background}>
       <div className={css.dogDetail}>
-      <img src={scotch} className={css.scotch} alt="" />
+        <img src={scotch} className={css.scotch} alt="scotch" />
         <div className={css.img}>
-          <img src={dogId?.reference_image_id} alt="" />
+          <img src={dogId.reference_image_id} alt="dog" />
         </div>
         <div className={css.dogInformation}>
           <div className={css.dogInfo}>
