@@ -4,7 +4,7 @@ import React from "react";
 import githublogo from "../../assets/github-logo.jpg";
 import linkedinlogo from "../../assets/linkedin-logo.png";
 import prueba from "../../assets/prueba.jpg";
-import twitter from "../../assets/twitter.png";
+import portfolio from "../../assets/portfolio.png";
 import javascript from "../../assets/js.png";
 import html from "../../assets/html.png";
 import css3 from "../../assets/css.png";
@@ -57,8 +57,8 @@ const About = () => {
               >
                 <img src={linkedinlogo} alt="linkedin" />
               </a>
-              <a href="" rel="noreferrer" target="_blank">
-                <img src={twitter} alt="twitter" />
+              <a href="https://portfolio-pink-ten-39.vercel.app/" rel="noreferrer" target="_blank">
+                <img src={portfolio} alt="portfolio" />
               </a>
             </div>
           </div>
