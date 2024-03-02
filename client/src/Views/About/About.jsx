@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Loading from "../../Components/Loading/Loading";
 
 //assets
 import githublogo from "../../assets/github-logo.jpg";
@@ -18,7 +19,15 @@ import css from "./About.module.css";
 
 const About = () => {
 
-  return (
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 2500)
+  }, [])
+
+{loading ? <Loading /> :
     <div className={css.aboutContainer} >
       <div className={css.cardContainer}>
         <img className={css.profilePic} src={prueba} alt=""/>
@@ -64,8 +73,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>}
 };
 
 export default About;
