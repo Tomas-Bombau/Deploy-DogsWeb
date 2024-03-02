@@ -7,7 +7,7 @@
 }
 
 .cardContainer{
-    width: 50%;
+    width: 650px;
     position: relative; 
     background: #fff;
     font-family: Montserrat, sans-serif;;
@@ -36,20 +36,23 @@
 }
 
 .details h1{
-    font-size: 35px;
+    color: white;
+    font-size: 40px;
     font-weight: bold;
     position: absolute;
-    top: 50%;
-    left: 25%;
+    top: 20%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     transition: opacity 4s ease-in-out;
 }
 
 .details h1 span{
+    color: white;
     font-size: 20px;
     font-weight: 300;
 }
+
 
 .details .detailInfo{
     position: absolute;
