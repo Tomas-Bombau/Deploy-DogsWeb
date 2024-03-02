@@ -4,7 +4,7 @@ import Loading from "../../Components/Loading/Loading";
 //assets
 import githublogo from "../../assets/github-logo.jpg";
 import linkedinlogo from "../../assets/linkedin-logo.png";
-import prueba from "../../assets/prueba.gng";
+import prueba from "../../assets/prueba.png";
 import portfolio from "../../assets/portfolio.png";
 import javascript from "../../assets/js.png";
 import html from "../../assets/html.png";
