@@ -4,7 +4,7 @@ import Loading from "../../Components/Loading/Loading";
 //assets
 import githublogo from "../../assets/github-logo.jpg";
 import linkedinlogo from "../../assets/linkedin-logo.png";
-import prueba from "../../assets/prueba.jpg";
+import prueba from "../../assets/prueba.gng";
 import portfolio from "../../assets/portfolio.png";
 import javascript from "../../assets/js.png";
 import html from "../../assets/html.png";
@@ -19,15 +19,7 @@ import css from "./About.module.css";
 
 const About = () => {
 
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 2500)
-  }, [])
-
-{loading ? <Loading /> :
+  return(
     <div className={css.aboutContainer} >
       <div className={css.cardContainer}>
         <img className={css.profilePic} src={prueba} alt=""/>
@@ -73,7 +65,8 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>}
+    </div>
+    )
 };
 
 export default About;
